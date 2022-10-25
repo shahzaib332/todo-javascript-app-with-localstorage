@@ -5,6 +5,10 @@ let input = id('input');
 let addBtn = id('add_btn');
 let listContainer = id('item_list_container');
 let itemList = localStorage.itemList ? JSON.parse(localStorage.itemList) : [];
+let editId,
+  isEditTask = false;
+  
+
 
 
 const renderList = () => {
@@ -54,11 +58,22 @@ const renderList = () => {
 // })
 
 const addEvent = () => {
-    let value = input.value;
+    let value = input.value.trim() ;
     if (value.length > 0) {
         itemList.push(value);
         input.value = "";
-    } else {
+        // if (!isEditTask) {
+        //     itemList = !itemList ? [] : itemList;
+        //     let taskInfo = { name: value };
+        //     itemList.push(taskInfo);
+        //   } else {
+        //     isEditTask = false;
+        //     itemList[editId].name = value;
+        //   }
+        
+    }
+    
+    else {
         alert("Please specify a name for your task");
     }
     localStorage.itemList = JSON.stringify(itemList);
@@ -75,27 +90,70 @@ const deleteItem = (index)=>{
         renderList();
     }else{
         alert("Item has already been deleted.");
+    
     }
 }
 
-const editItem = (index)=>{
-    let item = itemList[index];
-    if(item != undefined){
-        let ask = prompt(`Change "${item}" to : `);
-        if(ask.length > 0){
-            itemList[index] = ask;
-            localStorage.itemList = JSON.stringify(itemList);
-            renderList();
-        }
-    }else{
-        alert("Item not available in list.");
-    }
-}
+// const editItem = (index)=>{
+//     let item = itemList[index];
+//     input.value=item;
+//     if(item != undefined){
+//         let ask=`${item}`
+//         if(ask.length > 0){
+//             itemList[index] = ask;
+//             localStorage.itemList = JSON.stringify(itemList);
+//             renderList();
+//         }
+//     }else{
+//         alert("Item not available in list.");
+//     }
+// }
+function editItem(index) {
+    //to save edit item we insert input hidden in html and now we get here
+    let saveindex =document.getElementById('saveindex');
+
+    let addbtn =document.getElementById('add_btn');
+    let savebtn =document.getElementById('save_btn');
+    let webtask=localStorage.getItem("itemList");
+    let taskObj=JSON.parse(webtask);
+    saveindex.value=index;
+
+  
+    input.value = taskObj[index];
+    addbtn.style.display="none";
+    savebtn.style.display="block";
+
+ 
+ 
+  }
+  // for save buton
+  let savebtn =document.getElementById('save_btn');
+  let addbtn =document.getElementById('add_btn');
+  savebtn.addEventListener("click",function(){
+    // get items from local storage
+    let webtask=localStorage.getItem("itemList");
+    let taskObj=JSON.parse(webtask);
+
+
+    addbtn.style.display="block";
+    savebtn.style.display="none";
+    
+    let saveindex =document.getElementById('saveindex').value;
+    itemList[saveindex]=input.value;
+    localStorage.itemList = JSON.stringify(itemList);
+    renderList();
+    input.value=""
+    console.log(itemList)
+
+  })
+
 
 addBtn.addEventListener("click", (e) => {
 
-    e.preventDefault();
+   
     addEvent();
+    renderList();
+  
 })
-
 renderList();
+

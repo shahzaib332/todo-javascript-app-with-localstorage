@@ -13,7 +13,10 @@
     <div class="container">
         <h2 class="heading"> Todo List </h2>
         <div class="inputcontainer">
-            <input type="text"placeholder="enter todo here" id="input" class="input"> <button id="add_btn" class="add_btn">Add</button>
+            <input type="text"placeholder="enter todo here" id="input" class="input">
+            <input type="hidden" id="saveindex">
+             <button id="add_btn" class="add_btn">Add Todo</button>
+             <button id="save_btn" class="save_btn " >Save Todo</button>
         </div>
         <h2 class="subheading"> Total Tasks  <span class="count" id="count">0</span> </h2>
         <div class="item_list_container  " id="item_list_container">

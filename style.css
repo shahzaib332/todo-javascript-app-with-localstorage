@@ -156,7 +156,30 @@ i:hover{
     color: white;
     padding: 10px;
     box-shadow: 4px 4px 5px rgba(82, 82, 82, .4);
+    /* flex-flow: nowrap; */
+    white-space: nowrap;
+    cursor: pointer;
+}
+.save_btn{
+    background-color: blue;
+    color: white;
+    padding: 10px;
+    box-shadow: 4px 4px 5px rgba(82, 82, 82, .4);
+    display: none;
+    white-space: nowrap;
+    cursor: pointer;
 
+}
+.add_btn:hover{
+    opacity: 0.7;
+  
+}
+.save_btn:hover{
+    opacity: 0.7;
+  
+}
+.item-actions {
+    white-space: nowrap;
 }
 .input{
     box-shadow: 4px 4px 5px rgba(82, 82, 82, .4);
