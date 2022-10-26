@@ -12,29 +12,31 @@
 }
 .inputcontainer {
    
-    border: 2px solid;
-       
-    border-radius: 8px;
-       
-    width: 100%;
-       
-    /* margin: 50px; */
-       
-    padding-top: 60px;
-       
-    padding-bottom: 60px;
-       
-    justify-content: center;
-       
-    display: flex;
-       
-    /* padding-left: 20px; */
-       
-    background-color: #8364e8;
-       
-    box-shadow: 4px 4px 5px rgba(82, 82, 82, .4);
-    border-color: #8364e8;
-    }
+border: 2px solid;
+   
+border-radius: 8px;
+   
+width: 90%;
+   
+/* margin: 50px; */
+   
+padding-top: 60px;
+   
+padding-bottom: 60px;
+   
+justify-content: center;
+   
+display: flex;
+   
+/* padding-left: 20px; */
+   
+background-color: #8364e8;
+   
+box-shadow: 4px 4px 5px rgba(82, 82, 82, .4);
+   
+border-color: #8364e8;
+   
+}
 
 
 
@@ -161,14 +163,13 @@ i:hover{
     cursor: pointer;
 }
 .save_btn{
-    background-color: blue;
+    background-color: #1cc130;
     color: white;
     padding: 10px;
     box-shadow: 4px 4px 5px rgba(82, 82, 82, .4);
     display: none;
     white-space: nowrap;
     cursor: pointer;
-
 }
 .add_btn:hover{
     opacity: 0.7;
@@ -216,7 +217,7 @@ display: flex;
     font-weight: bold;
 }
 .itemname {
-    font-size: 30px;
+    font-size: 20px;
     margin-left: 10px;
 }
 .item_list_container::-webkit-scrollbar{
@@ -240,4 +241,8 @@ display: flex;
         background-color: transparent;
     }
 
+}
+@media (max-widt:450px) {
+
+    
 }
