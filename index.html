@@ -1,31 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Todo App</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
     <div class="container">
-        <h2 class="heading"> Todo List </h2>
-        <div class="inputcontainer">
-            <input type="text"placeholder="enter todo here" id="input" class="input">
-            <input type="hidden" id="saveindex">
-             <button id="add_btn" class="add_btn">Add Todo</button>
-             <button id="save_btn" class="save_btn " >Save Todo</button>
-        </div>
-        <h2 class="subheading"> Total Tasks  <span class="count" id="count">0</span> </h2>
-        <div class="item_list_container  " id="item_list_container">
-
-       
-            
-        </div>
-        
+      <h2 class="heading">Todo List</h2>
+      <div class="inputcontainer">
+        <input
+          type="text"
+          placeholder="enter todo here"
+          id="input"
+          class="input"
+          value=""
+        />
+        <input type="hidden" id="saveindex"  />
+        <button id="add_btn" class="add_btn">Add Todo</button>
+        <button id="save_btn" class="save_btn">Save Todo</button>
+      </div>
+      <h2 class="subheading">
+        Total Tasks <span class="count" id="count">0</span>
+      </h2>
+      <div class="item_list_container" id="item_list_container"></div>
     </div>
-    <script src="script.js"></script>
-</body>
+    <script src="scriptapi.js"></script>
+  </body>
+  
 </html>
