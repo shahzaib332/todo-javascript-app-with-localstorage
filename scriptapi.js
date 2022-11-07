@@ -1,11 +1,11 @@
 let saveBtn=document.querySelector('.save_btn');
 
-const id = (x) => {
+const id1 = (x) => {
     return document.getElementById(x);
 }
-let input = id('input');
-let addBtn = id('add_btn');
-let listContainer = id('item_list_container');
+let input = id1('input');
+let addBtn = id1('add_btn');
+let listContainer = id1('item_list_container');
 // let itemList = localStorage.itemList ? JSON.parse(localStorage.itemList) : [];
 let itemList=[];
 
@@ -152,10 +152,11 @@ listContainer.addEventListener('click',(e)=>{
     let editButtonIsPressed=e.target.id=='edit-btn'  ;
 
 
-    let id1=e.target.parentElement.parentElement.dataset.id;
+    //let id1=e.target.parentElement.parentElement.dataset.id;
 
     if(editButtonIsPressed){
         let parent=e.target.parentElement.parentElement.parentElement;
+        console.log(parent)
         let titleContent=parent.querySelector('.itemname').textContent;
         console.log(titleContent);
 
@@ -164,14 +165,19 @@ listContainer.addEventListener('click',(e)=>{
         saveBtn.style.display='block';
         
     }
-  
+    let id2=e.target.parentElement.parentElement.parentElement.dataset.id;
 
 
     saveBtn.addEventListener('click',()=>{
+      // let item = itemList[index];
+      // console.log(itemList)
+      // let id=e.target.parentElemenet.dataset.id;
+      console.log(id2)
 
-        fetch(`https://jsonplaceholder.typicode.com/todos/${id}`, {
+        fetch(`https://jsonplaceholder.typicode.com/todos/${id2}`, {
   method: 'PATCH',
   body: JSON.stringify({
+   
     title: input.value,
   }),
   headers: {
@@ -181,6 +187,8 @@ listContainer.addEventListener('click',(e)=>{
   .then((response) => response.json())
   .then((json) => {
     console.log(json)
+  
+    // renderList(itemList);
    
   })
     
